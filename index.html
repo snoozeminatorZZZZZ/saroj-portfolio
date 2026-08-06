@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Saroj Anand Tripathy</title>
+<!-- FIX 2: Custom SVG favicon — replaces default earth/globe icon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306060f'/><text x='50' y='56' font-family='monospace' font-size='38' font-weight='900' fill='%2300f5ff' text-anchor='middle' dominant-baseline='middle'>SAT</text><line x1='10' y1='68' x2='90' y2='68' stroke='%2300f5ff' stroke-width='4' stroke-linecap='round'/><circle cx='82' cy='22' r='10' fill='%2300f5ff' opacity='0.9'/></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 /* ══ THEME ══════════════════════════════ */
@@ -59,8 +61,9 @@ body:has(a:hover,button:hover,.rev-card:hover) #cur2{width:48px;height:48px;bord
 [data-theme="dark"] #cglow{background:radial-gradient(circle,rgba(0,245,255,.05) 0%,rgba(123,47,255,.03) 35%,transparent 70%)}
 [data-theme="light"] #cglow{background:radial-gradient(circle,rgba(0,85,204,.04) 0%,transparent 65%)}
 
-/* ══ THEME TOGGLE ═══════════════════════ */
-#theme-bar{position:fixed;top:14px;right:14px;z-index:600;display:flex;gap:3px;background:var(--bg2);border:1px solid var(--bdr);border-radius:99px;padding:4px;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+/* ══ THEME TOGGLE ═══════════════════════
+   FIX 1: Moved below nav (top:72px) so it no longer overlaps the HIRE ME button */
+#theme-bar{position:fixed;top:72px;right:14px;z-index:600;display:flex;gap:3px;background:var(--bg2);border:1px solid var(--bdr);border-radius:99px;padding:4px;box-shadow:0 4px 20px rgba(0,0,0,.2)}
 .tbtn{font-family:var(--fm);font-size:10px;letter-spacing:.5px;padding:5px 13px;border-radius:99px;border:none;cursor:pointer;transition:all .2s;color:var(--t3);background:transparent}
 .tbtn.act{background:var(--c);color:#fff;box-shadow:0 0 12px rgba(0,245,255,.3)}
 [data-theme="light"] .tbtn.act{background:var(--c);color:#fff;box-shadow:0 0 12px rgba(0,85,204,.25)}
@@ -328,10 +331,9 @@ footer span{color:var(--c)}
   .hstat{min-width:120px;flex:1}
   #cwin{width:calc(100vw - 24px);right:12px;bottom:84px}
   #ctoggle{right:16px;bottom:18px}
-  #theme-bar{top:10px;right:10px}
+  /* FIX 1 mobile: keep below nav on small screens too */
+  #theme-bar{top:68px;right:10px}
 }
-
-
 
 /* ── HONORS & AWARDS ── */
 #honors{background:transparent}
@@ -352,7 +354,6 @@ footer span{color:var(--c)}
 .hc-pink .hcard-issuer{color:var(--pk)}
 .hcard-desc{font-size:12px;color:var(--t2);line-height:1.7}
 .hcard-detail{font-size:11px;color:var(--t3);line-height:1.65;margin-top:8px;padding-top:8px;border-top:1px solid var(--bdr)}
-/* Pat detail */
 .pat-detail{font-size:12px;color:var(--t2);line-height:1.7;margin-bottom:14px;display:flex;flex-direction:column;gap:8px}
 .pat-detail strong{color:var(--t);font-weight:500}
 .pat-tech-row{display:flex;flex-wrap:wrap;gap:6px}
@@ -366,7 +367,6 @@ footer span{color:var(--c)}
 .pub-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
 .pub-tag{font-family:var(--fm);font-size:10px;padding:2px 8px;border-radius:4px;background:rgba(0,245,255,.05);border:1px solid rgba(0,245,255,.1);color:var(--t3)}
 [data-theme="light"] .pub-tag{background:rgba(0,85,204,.05);border-color:rgba(0,85,204,.12)}
-/* 3-column rec grid on wide screens */
 @media(min-width:1024px){.rec-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 /* ── ACADEMIC PROJECTS ── */
@@ -390,8 +390,7 @@ footer span{color:var(--c)}
 .acard-assoc{font-family:var(--fm);font-size:10px;color:var(--t3);margin-top:10px;padding-top:10px;border-top:1px solid var(--bdr)}
 @media(max-width:768px){.acad-grid{grid-template-columns:1fr}}
 
-/* ══ SECTION TRANSPARENT OVERLAYS (so bg animation shows through all sections) ══ */
-/* Dark theme: dark semi-transparent overlay on each section */
+/* ══ SECTION TRANSPARENT OVERLAYS ══ */
 [data-theme="dark"] .section,
 [data-theme="dark"] #hero,
 [data-theme="dark"] #about,
@@ -404,7 +403,6 @@ footer span{color:var(--c)}
 [data-theme="dark"] #contact {
   background: rgba(6,6,15,0.58) !important;
 }
-/* Light theme: white-tinted overlay */
 [data-theme="light"] .section,
 [data-theme="light"] #hero,
 [data-theme="light"] #about,
@@ -417,7 +415,6 @@ footer span{color:var(--c)}
 [data-theme="light"] #contact {
   background: rgba(244,246,253,0.62) !important;
 }
-/* Cards and components keep their backgrounds */
 [data-theme="dark"] .about-card,
 [data-theme="dark"] .tcard,
 [data-theme="dark"] .pcard,
@@ -451,7 +448,6 @@ footer span{color:var(--c)}
 [data-theme="light"] .sk {
   background: rgba(240,242,252,0.9) !important;
 }
-/* Hero section needs to be fully transparent to show bg */
 #hero { background: transparent !important; }
 </style>
 </head>
@@ -478,6 +474,7 @@ footer span{color:var(--c)}
 <div id="cur2"></div>
 
 <!-- ══ THEME TOGGLE ══════════════════════ -->
+<!-- FIX 1: Positioned at top:72px so it sits cleanly below the 64px nav bar -->
 <div id="theme-bar">
   <button class="tbtn" id="tbtn-dark" onclick="setTheme('dark')">DARK</button>
   <button class="tbtn act" id="tbtn-system" onclick="setTheme('system')">AUTO</button>
@@ -516,7 +513,7 @@ footer span{color:var(--c)}
   <div class="hero-tw" id="tw"></div>
   <p class="hero-bio">
     <strong>3+ years</strong> designing scalable cloud-native systems at Genpact for Fortune 500 clients.<br>
-    <strong>Python · Java · AWS · FastAPI · Terraform</strong> — production-grade microservices & BPM workflows.<br>
+    <strong>Python · Java · AWS · FastAPI · Terraform</strong> — production-grade microservices &amp; BPM workflows.<br>
     Patent holder · 5 publications · IEEE Best Paper Award · 45+ certifications.
   </p>
   <div class="hero-btns">
@@ -554,6 +551,8 @@ footer span{color:var(--c)}
       <div class="info-row"><span class="info-icon">📍</span><span class="info-label">location</span><span class="info-value">Hyderabad, Telangana, India</span></div>
       <div class="info-row"><span class="info-icon">✉</span><span class="info-label">email</span><span class="info-value"><a href="mailto:sarojanandtripathy.sat@gmail.com">Send Email ↗</a></span></div>
       <div class="info-row"><span class="info-icon">🔗</span><span class="info-label">linkedin</span><span class="info-value"><a href="https://linkedin.com/in/saroj-anand-tripathy" target="_blank">saroj-anand-tripathy</a></span></div>
+      <!-- FIX 3: Google Scholar added to about card -->
+      <div class="info-row"><span class="info-icon">🎓</span><span class="info-label">scholar</span><span class="info-value"><a href="https://scholar.google.com/citations?user=0cW7Y0AAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar ↗</a></span></div>
       <div class="info-row"><span class="info-icon">🎓</span><span class="info-label">degree</span><span class="info-value">B.Tech ECE (IoT &amp; Sensors) · VIT Vellore · 2018–22</span></div>
       <div class="info-row"><span class="info-icon">🏢</span><span class="info-label">current</span><span class="info-value">Consultant SDE2 @ Genpact</span></div>
       <div class="info-row"><span class="info-icon">💬</span><span class="info-label">languages</span><span class="info-value">English · Odia (Native) · Hindi</span></div>
@@ -736,7 +735,6 @@ footer span{color:var(--c)}
     <div class="academic-section">
       <div class="academic-title">Academic Research Projects · VIT Vellore</div>
       <div class="acad-grid">
-
         <div class="acard ac1 reveal">
           <div class="acard-tag">Research Project</div>
           <div class="acard-title">Abstractive Text Summarization using BiLSTM &amp; Pointer Generator</div>
@@ -745,7 +743,6 @@ footer span{color:var(--c)}
           <div class="acard-tags"><span class="atag">Python</span><span class="atag">BiLSTM</span><span class="atag">Neural Networks</span><span class="atag">Deep Learning</span></div>
           <div class="acard-assoc">📄 Published · Journal of Applied Research and Technology · 2023</div>
         </div>
-
         <div class="acard ac2 reveal">
           <div class="acard-tag">Research Project</div>
           <div class="acard-title">Cyclic Temperature Heating &amp; Cooling Control System</div>
@@ -754,7 +751,6 @@ footer span{color:var(--c)}
           <div class="acard-tags"><span class="atag">PID Control</span><span class="atag">Thermoelectrics</span><span class="atag">PWM</span><span class="atag">Control Systems</span><span class="atag">IoT</span></div>
           <div class="acard-assoc">📄 Published · IJITEE · Dec 2019</div>
         </div>
-
         <div class="acard ac3 reveal">
           <div class="acard-tag">Research Project</div>
           <div class="acard-title">Smart Pre-Screening of Diseases via Cough Sound Analysis</div>
@@ -763,13 +759,11 @@ footer span{color:var(--c)}
           <div class="acard-tags"><span class="atag">Python</span><span class="atag">CNN</span><span class="atag">Edge Computing</span><span class="atag">Signal Processing</span><span class="atag">Healthcare AI</span></div>
           <div class="acard-assoc">📄 Published · IOP Publishing · Apr 2022</div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ RESEARCH ═══════════════════════════ -->
 <!-- ══ HONORS & AWARDS ══════════════════ -->
 <section id="honors" class="section">
   <div class="sec-label">05 honors &amp; awards</div>
@@ -839,6 +833,7 @@ footer span{color:var(--c)}
   </div>
 </section>
 
+<!-- ══ RESEARCH ═══════════════════════════ -->
 <section id="research" class="section">
   <div class="sec-label">06 research</div>
   <h2 class="sec-title">Patent &amp; Publications</h2>
@@ -917,43 +912,36 @@ footer span{color:var(--c)}
   <div class="sec-label">07 recommendations</div>
   <h2 class="sec-title">What Others Say</h2>
   <div class="rec-grid">
-
     <div class="reccard reveal">
       <p class="rec-txt">"I can confidently say that he is one of the most dedicated and technically sound professionals I've worked with. Saroj brings a rare blend of deep technical expertise and pragmatic problem-solving skills. He consistently delivered high-quality code, met tight deadlines, and proactively contributed ideas that improved our system architecture. His proficiency in Python, AWS services, and cloud infrastructure stood out, and he often went the extra mile to mentor team members. What I admire most is Saroj's calm and composed approach to even the most complex challenges. Any team would be lucky to have him."</p>
       <div class="rec-nm">Gaurav Rawal</div>
       <div class="rec-rl">Software Engineer · worked with Saroj on the same team · May 2025</div>
     </div>
-
     <div class="reccard reveal">
       <p class="rec-txt">"I'm thrilled to recommend Saroj — a standout Python Developer who truly exceeds expectations. His ability to quickly master new technologies is impressive, and he consistently tackles complex projects with confidence and skill. Saroj's fearless approach to discussing and challenging findings, coupled with his openness to rethinking and cross-verifying suggestions, ensures deliverables of the highest quality. He doesn't just deliver results; he elevates the entire team with his insightful contributions and dedication. His blend of intelligence, confidence, and teamwork makes him an invaluable asset to any organization."</p>
       <div class="rec-nm">Purushothaman Ramasamy</div>
       <div class="rec-rl">Fullstack · Python · FastAPI · PostgreSQL · Network Automation · managed Saroj directly · Aug 2024</div>
     </div>
-
     <div class="reccard reveal">
       <p class="rec-txt">"Saroj worked on the Kaggle multilingual toxic comment classification and successfully completed the internship under the guidance of the UCT team. He is a self-driven, self-motivated individual with a strong technical background. He achieved very good accuracy — one of the best results provided by his peers. I am pleased to offer my recommendation for Saroj and wish him all the best for his great future."</p>
       <div class="rec-nm">Kaushlendra Singh Sisodia</div>
       <div class="rec-rl">Founder &amp; CEO, UniConverge Technologies · Partner with E&amp;ICT Academy (IIT Kanpur, IIT Guwahati, IIT Roorkee) · managed Saroj directly · May 2023</div>
     </div>
-
     <div class="reccard reveal">
       <p class="rec-txt">"Saroj worked as an intern at Anavadya. He is a good learner and has good understanding of latest technologies. He is an active person who likes to learn more and produces quality results. All the best Saroj."</p>
       <div class="rec-nm">Narayanan Lakshminarasimhan</div>
       <div class="rec-rl">Banking Technology Leader · Enterprise Architect &amp; MSI · RBI-Grade Digital Banking Platforms · managed Saroj directly · Mar 2021</div>
     </div>
-
     <div class="reccard reveal">
       <p class="rec-txt">"Saroj Anand Tripathy had worked as machine learning intern for a complex Kaggle problem — Jigsaw Multilingual Toxic Comment Classification. Saroj was able to deliver results within stipulated time with better than asked accuracy. He gained a lot of experience and skills in data science and Machine Learning. I wish Saroj good luck for his career."</p>
       <div class="rec-nm">Kaushlendra Singh Sisodia <span style="font-size:10px;opacity:.6">(2nd recommendation)</span></div>
       <div class="rec-rl">Founder &amp; CEO, UniConverge Technologies · senior to Saroj · Jun 2020</div>
     </div>
-
     <div class="reccard reveal">
       <p class="rec-txt">"Good Learner."</p>
       <div class="rec-nm">Gunanithi N</div>
       <div class="rec-rl">Project Manager · Scrum Master · managed Saroj directly · Jul 2020</div>
     </div>
-
   </div>
 </section>
 
@@ -966,6 +954,8 @@ footer span{color:var(--c)}
       <p class="contact-intro">Open to SDE, Backend, Cloud, and AI/ML Engineering roles. Happy to connect with researchers, engineers, and builders working on hard problems.</p>
       <a href="mailto:sarojanandtripathy.sat@gmail.com" class="clink"><div class="cico">✉</div><div><div class="clbl">EMAIL</div><div class="cval">Send a message ↗</div></div></a>
       <a href="https://linkedin.com/in/saroj-anand-tripathy" target="_blank" class="clink"><div class="cico">🔗</div><div><div class="clbl">LINKEDIN</div><div class="cval">saroj-anand-tripathy</div></div></a>
+      <!-- FIX 3: Google Scholar contact link -->
+      <a href="https://scholar.google.com/citations?user=0cW7Y0AAAAAJ&hl=en&authuser=1" target="_blank" class="clink"><div class="cico">🎓</div><div><div class="clbl">GOOGLE SCHOLAR</div><div class="cval">5 publications · IEEE Best Paper</div></div></a>
     </div>
     <div class="form-card">
       <div><label class="flbl">NAME</label><input class="finput" type="text" placeholder="Your name"></div>
@@ -980,20 +970,15 @@ footer span{color:var(--c)}
 
 <!-- ══ CHATBOT ════════════════════════════ -->
 <button id="ctoggle" onclick="toggleChat()">
-  <!-- Online person icon -->
   <svg class="ico-c" viewBox="0 0 24 24" fill="none">
-    <!-- Head -->
     <circle cx="12" cy="8" r="3.2" fill="#000"/>
-    <!-- Body / shoulders -->
     <path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5" stroke="#000" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-    <!-- Online dot -->
     <circle cx="18.5" cy="6.5" r="3" fill="#00ff88"/>
     <circle cx="18.5" cy="6.5" r="3" fill="#00ff88" opacity="0.4">
       <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/>
     </circle>
   </svg>
-  <!-- Close X -->
   <svg class="ico-x" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#000"/></svg>
 </button>
 <div id="cwin">
@@ -1030,17 +1015,7 @@ applyTheme(localStorage.getItem('sat_theme')||'system');
 
 // ══ LOADER ═══════════════════════════════
 (function(){
-  const msgs=[
-    'Booting SAT-OS...',
-    'Loading profile data...',
-    'Mounting experience modules...',
-    'Building project artifacts...',
-    'Compiling research index...',
-    'Spinning up AI assistant...',
-    'Rendering interface...',
-    'Almost ready...',
-    'Welcome.'
-  ];
+  const msgs=['Booting SAT-OS...','Loading profile data...','Mounting experience modules...','Building project artifacts...','Compiling research index...','Spinning up AI assistant...','Rendering interface...','Almost ready...','Welcome.'];
   const steps=[0,12,25,38,52,65,78,90,100];
   const bar=document.getElementById('ld-bar');
   const msg=document.getElementById('ld-msg');
@@ -1057,7 +1032,6 @@ applyTheme(localStorage.getItem('sat_theme')||'system');
       bar.style.width=prog+'%';
       pct.textContent=Math.floor(prog)+'%';
     },20);
-    // activate step
     const sIdx=Math.floor(ci/1.6);
     if(stepEls[sIdx]){
       stepEls.forEach(s=>s.classList.remove('active'));
@@ -1095,7 +1069,6 @@ document.addEventListener('mousemove',e=>{gtx=e.clientX;gty=e.clientY},{passive:
   document.addEventListener('mousemove',e=>{cmx=e.clientX;cmy=e.clientY},{passive:true});
   function isDark(){return document.body.getAttribute('data-theme')==='dark'}
 
-  // ── DARK CANVAS: Aurora + Stars + Matrix + Scan (75% visible) ──
   const dc=document.getElementById('nc');
   const dctx=dc.getContext('2d');
   function rDark(){dc.width=W();dc.height=H()}
@@ -1119,12 +1092,9 @@ document.addEventListener('mousemove',e=>{gtx=e.clientX;gty=e.clientY},{passive:
 
   function drawDark(){
     const DW=dc.width,DH=dc.height;
-    // Deep space base
     const bg=dctx.createLinearGradient(0,0,DW,DH);
     bg.addColorStop(0,'#020308');bg.addColorStop(.5,'#050810');bg.addColorStop(1,'#030508');
     dctx.fillStyle=bg;dctx.fillRect(0,0,DW,DH);
-
-    // Plasma blobs
     [{x:cmx*.55+DW*.22,y:cmy*.4+DH*.08,r:420,c:'rgba(0,245,255,0.055)'},
      {x:DW-cmx*.4,y:DH-cmy*.3,r:360,c:'rgba(123,47,255,0.045)'},
      {x:DW*.5,y:DH*.5,r:520,c:'rgba(0,255,159,0.028)'}].forEach(b=>{
@@ -1132,7 +1102,6 @@ document.addEventListener('mousemove',e=>{gtx=e.clientX;gty=e.clientY},{passive:
       g.addColorStop(0,b.c);g.addColorStop(1,'transparent');
       dctx.fillStyle=g;dctx.fillRect(0,0,DW,DH);
     });
-    // Aurora bands
     auroras.forEach(a=>{
       const cy=a.y*DH;
       for(let s=0;s<4;s++){
@@ -1152,7 +1121,6 @@ document.addEventListener('mousemove',e=>{gtx=e.clientX;gty=e.clientY},{passive:
         dctx.fillStyle=gr;dctx.fill();
       }
     });
-    // Stars
     stars.forEach(s=>{
       s.x+=s.vx;s.y+=s.vy;
       if(s.x<0)s.x=DW;if(s.x>DW)s.x=0;
@@ -1169,7 +1137,6 @@ document.addEventListener('mousemove',e=>{gtx=e.clientX;gty=e.clientY},{passive:
         dctx.fillStyle=gs;dctx.beginPath();dctx.arc(s.x,s.y,s.r*9,0,Math.PI*2);dctx.fill();
       }
     });
-    // Matrix rain across full width
     dctx.font='12px monospace';
     drops.forEach((d,i)=>{
       if(dt%4===0){d.ct++;if(d.ct>3){d.ch=(d.ch+1)%chars.length;d.ct=0}}
@@ -1179,7 +1146,6 @@ document.addEventListener('mousemove',e=>{gtx=e.clientX;gty=e.clientY},{passive:
       d.y+=d.spd*2.5;
       if(d.y>DH){d.y=-14;d.o=Math.random()*.45+.15}
     });
-    // Scan line
     const sy=((dt*.35)%DH);
     const sg=dctx.createLinearGradient(0,sy-50,0,sy+2);
     sg.addColorStop(0,'transparent');sg.addColorStop(1,'rgba(0,245,255,0.035)');
@@ -1187,13 +1153,11 @@ document.addEventListener('mousemove',e=>{gtx=e.clientX;gty=e.clientY},{passive:
     dt++;
   }
 
-  // ── LIGHT CANVAS: Green terminal / coding theme ──
   const lc=document.getElementById('nc2');
   const lctx=lc.getContext('2d');
   function rLight(){lc.width=W();lc.height=H()}
   window.addEventListener('resize',rLight);rLight();
 
-  // Terminal code lines
   const codeSnippets=[
     'import numpy as np','from fastapi import FastAPI','def train_model(X, y):',
     '  model = CNN9(layers=13)','  return model.fit(X, y)','@app.route("/predict")',
@@ -1207,87 +1171,52 @@ document.addEventListener('mousemove',e=>{gtx=e.clientX;gty=e.clientY},{passive:
     'patent_no = 510765','# IEEE Best Paper 🏆','async def send_msg():',
   ];
   const codeLines=Array.from({length:28},(_,i)=>({
-    x: -Math.random()*W()*0.6,
-    y: Math.random()*H(),
-    spd: Math.random()*0.4+0.18,
-    txt: codeSnippets[i%codeSnippets.length],
-    o: Math.random()*0.32+0.1,
-    size: Math.random()<0.3?13:11,
-    col: Math.random()<0.15?'rgba(0,255,100,':'rgba(0,200,80,',
+    x:-Math.random()*W()*0.6,y:Math.random()*H(),
+    spd:Math.random()*0.4+0.18,txt:codeSnippets[i%codeSnippets.length],
+    o:Math.random()*0.32+0.1,size:Math.random()<0.3?13:11,
+    col:Math.random()<0.15?'rgba(0,255,100,':'rgba(0,200,80,',
   }));
-
-  // Terminal cursor blinking lines
   const cursors=Array.from({length:5},(_,i)=>({
-    x: Math.random()*W()*0.7+W()*0.1,
-    y: Math.random()*H(),
-    blinkT: Math.random()*Math.PI*2,
-    blinkS: 0.04+Math.random()*0.02,
+    x:Math.random()*W()*0.7+W()*0.1,y:Math.random()*H(),
+    blinkT:Math.random()*Math.PI*2,blinkS:0.04+Math.random()*0.02,
   }));
-
-  // Scan lines (horizontal repeating terminal scanlines)
-  // Mouse highlight circle
   let lt=0;
   function drawLight(){
     const LW=lc.width,LH=lc.height;
     lctx.clearRect(0,0,LW,LH);
-
-    // Green tinted paper bg
-    lctx.fillStyle='rgba(240,255,240,0.18)';
-    lctx.fillRect(0,0,LW,LH);
-
-    // Subtle scanlines overlay
-    for(let y=0;y<LH;y+=4){
-      lctx.fillStyle='rgba(0,80,0,0.022)';
-      lctx.fillRect(0,y,LW,1);
-    }
-
-    // Faint green grid
+    lctx.fillStyle='rgba(240,255,240,0.18)';lctx.fillRect(0,0,LW,LH);
+    for(let y=0;y<LH;y+=4){lctx.fillStyle='rgba(0,80,0,0.022)';lctx.fillRect(0,y,LW,1)}
     lctx.strokeStyle='rgba(0,160,60,0.06)';lctx.lineWidth=.5;
     for(let x=0;x<LW;x+=52){lctx.beginPath();lctx.moveTo(x,0);lctx.lineTo(x,LH);lctx.stroke()}
     for(let y=0;y<LH;y+=52){lctx.beginPath();lctx.moveTo(0,y);lctx.lineTo(LW,y);lctx.stroke()}
-
-    // Glowing mouse circle
     const mg=lctx.createRadialGradient(cmx,cmy,0,cmx,cmy,220);
     mg.addColorStop(0,'rgba(0,200,80,0.07)');mg.addColorStop(1,'transparent');
     lctx.fillStyle=mg;lctx.fillRect(0,0,LW,LH);
-
-    // Mouse ripples (green)
     [90,180].forEach((maxR,i)=>{
       const rr=((lt+i*90)%180)/180*maxR;
       const ra=Math.max(0,(1-rr/maxR)*(i===0?.05:.03));
       lctx.beginPath();lctx.arc(cmx,cmy,rr,0,Math.PI*2);
       lctx.strokeStyle=`rgba(0,200,80,${ra})`;lctx.lineWidth=1;lctx.stroke();
     });
-
-    // Scrolling code lines
     lctx.font='bold 12px "JetBrains Mono",monospace';
     codeLines.forEach(cl=>{
       cl.x+=cl.spd;
       if(cl.x>LW+300)cl.x=-Math.random()*LW*0.4-200;
       const ao=cl.o*(0.8+0.2*Math.sin(lt*.012+cl.x*.003));
-      lctx.fillStyle=cl.col+ao+')';
-      lctx.fillText(cl.txt,cl.x,cl.y);
+      lctx.fillStyle=cl.col+ao+')';lctx.fillText(cl.txt,cl.x,cl.y);
     });
-
-    // Blinking terminal cursors
     cursors.forEach(cur=>{
       cur.blinkT+=cur.blinkS;
       const co=0.5+0.5*Math.sin(cur.blinkT);
-      lctx.fillStyle=`rgba(0,200,80,${co*0.5})`;
-      lctx.fillRect(cur.x,cur.y-12,8,14);
+      lctx.fillStyle=`rgba(0,200,80,${co*0.5})`;lctx.fillRect(cur.x,cur.y-12,8,14);
     });
-
-    // Corner terminal decoration (top-left)
-    lctx.fillStyle='rgba(0,180,60,0.12)';
-    lctx.font='11px monospace';
+    lctx.fillStyle='rgba(0,180,60,0.12)';lctx.font='11px monospace';
     lctx.fillText('▶ SAT-PORTFOLIO ~ % _',18,28);
     lctx.fillStyle='rgba(0,180,60,0.07)';
     lctx.fillText('───────────────────────────────',18,38);
-
     lt++;
   }
 
-  // ── UNIFIED LOOP ──
   function loop(){
     const dark=isDark();
     dc.style.display=dark?'block':'none';
@@ -1355,6 +1284,7 @@ const SYS=`You are an AI assistant on Saroj Anand Tripathy's portfolio. ONLY ans
 PROFILE:
 Name: Saroj Anand Tripathy | Location: Hyderabad, Telangana, India
 LinkedIn: linkedin.com/in/saroj-anand-tripathy
+Google Scholar: scholar.google.com/citations?user=0cW7Y0AAAAAJ
 
 CURRENT: Consultant SDE2 @ Genpact (Jul 2023–Present) — Hyderabad (Hybrid)
 E-Commerce Client (Shutterfly - Manufacturing Operations):
@@ -1376,18 +1306,6 @@ Samsung PRISM: Sound detection engine — mAP 0.42, CNN9/CNN13, real-time Python
 Published IEEE DELCON 2023 — Best Paper Award
 Skills: Python, CNN, Tkinter, Signal Processing, Academic Publishing
 
-OTHER INTERNSHIPS:
-- Happiest Minds (Mar–Apr 2021): OCR Receipt Reader; (Dec 2020–Jan 2021): Face Movement Detection CV
-- The Sparks Foundation (Mar–Apr 2021): Graduate Rotational Internship
-- MeChonyX D2R (May 2020–Jan 2021): Research Intern
-- Anavadya Softech (Apr–May 2020): COVID-19 Predictor AI, Top 10 nationally IoT Academy
-- UniConverge + IoT Academy (Apr 2020): Jigsaw Multilingual Toxic Comment Classification (Kaggle)
-- Verzeo (Dec 2019–Feb 2020): House Price Prediction (79 features) + Speech-to-Text (team of 5)
-
-IEEE LEADERSHIP (Dec 2019–Jan 2022): Program Chair IEEE TEMS VIT Vellore; Core Committee IEEE ComSoc; Debate Society VIT
-
-EDUCATION: B.Tech ECE (IoT & Sensors) VIT Vellore 2018-2022 | Delhi Public School Bhilai
-
 PATENT: "Intelligent Goods Anti-Tamper System Using RFID and ML" — IN 202041052449, Patent No 510765, Indian Patent Office, Feb 2024
 
 PUBLICATIONS (5):
@@ -1397,14 +1315,7 @@ PUBLICATIONS (5):
 4. Pulmonary Pre-Screening Chatbot — Huazhong University Journal, Jun 2021
 5. Cyclic Temperature Control System — IJITEE, Dec 2019
 
-HONORS: VIT Guest Speaker ×2, Patent Grant, SCOPE Newsletter, IEEE Best Paper, IoT Academy Top 10, 45+ Certifications
-
 SKILLS: Python, Java, SQL, JS; AWS (Lambda/SQS/Step Functions/API Gateway/S3/CloudWatch/IAM/DynamoDB); Terraform, Docker, GitHub Actions, Jenkins; FastAPI, Spring Boot, Flask, REST, Microservices, Camunda BPM; TF, Keras, Scikit-learn, OpenCV, CNN, BiLSTM, Transfer Learning, CV, OCR; PostgreSQL, DynamoDB, Oracle SQL, MS SQL Server; Big Data, Hadoop, Predictive Analytics, NumPy, Matplotlib, RAGE Modelling
-
-PORTFOLIO PROJECTS (building):
-1. P2P Lending: React Native, Node.js, PostgreSQL, XGBoost, JWT, AES-256, FastAPI
-2. Fake Detector: BERT, ResNet, FastAPI, PyTorch, OpenCV, HuggingFace
-3. Offline AI (Android): Phi-3 Mini INT4, llama.cpp, Flutter, Whisper, SQLCipher
 
 RESPOND AS JSON ONLY:
 {"label":"SHORT CATEGORY","paragraphs":["sentence"],"points":["<b>key</b> fact"],"metrics":["chip"],"footer":"closing or empty"}`;
